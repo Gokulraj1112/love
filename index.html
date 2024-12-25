@@ -17,19 +17,27 @@
             overflow: hidden;
             position: relative;
         }
+
         .container {
             text-align: center;
             color: #fff;
             z-index: 2;
+            position: relative;
         }
+
         h1 {
             font-size: 50px;
             margin: 0;
+            font-family: 'Cursive', sans-serif;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
         }
+
         p {
             font-size: 24px;
             margin-top: 20px;
+            font-weight: 500;
         }
+
         button {
             margin: 20px;
             padding: 15px 30px;
@@ -37,18 +45,25 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: transform 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
         }
+
         #yes {
             background-color: #28a745;
             color: white;
         }
+
         #no {
             background-color: #dc3545;
             color: white;
         }
+
         #no:hover {
             transform: translateX(calc(100px * (Math.random() > 0.5 ? 1 : -1)));
         }
+
         #heart {
             position: absolute;
             top: 50%;
@@ -59,6 +74,7 @@
             animation: pulse 1s infinite;
             display: none;
         }
+
         @keyframes pulse {
             0%, 100% {
                 transform: scale(1) translate(-50%, -50%);
@@ -77,12 +93,14 @@
             height: 100%;
             pointer-events: none;
         }
+
         .particle {
             position: absolute;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.7);
             animation: particleAnimation 10s infinite;
         }
+
         @keyframes particleAnimation {
             0% {
                 transform: translate(0, 0);
@@ -93,6 +111,35 @@
                 opacity: 0;
             }
         }
+
+        /* Style for Angel Name */
+        #angel-name {
+            font-size: 80px;
+            font-weight: 900;
+            margin-top: 30px;
+            color: transparent;
+            background: linear-gradient(135deg, #ff7f50, #ff1493, #4b0082, #00bfff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+            letter-spacing: 5px;
+            font-family: 'Pacifico', cursive;
+            animation: glow 1.5s ease-in-out infinite alternate;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 40px rgba(255, 255, 255, 0.8);
+            }
+            100% {
+                text-shadow: 0 0 40px rgba(255, 255, 255, 0.9), 0 0 80px rgba(255, 255, 255, 0.9);
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -107,6 +154,9 @@
     <button id="no">No</button>
     <div id="heart">❤️</div>
 </div>
+
+<!-- Angel's Name positioned at the top -->
+<div id="angel-name">ANGEL</div>
 
 <script>
     // Particle effect setup
